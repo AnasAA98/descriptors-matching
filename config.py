@@ -2,10 +2,8 @@
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env
 load_dotenv()
 
-# Read the values (None if missing)
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_HOST = os.getenv("DB_HOST", "127.0.0.1")

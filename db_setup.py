@@ -8,7 +8,7 @@ engine = create_engine(
 )
 
 with engine.begin() as conn:
-    # 1. Merchant list table
+    # 1. Merchant list 
     conn.execute(text("""
       CREATE TABLE IF NOT EXISTS merchant_list (
         merchant_id   VARCHAR(36) PRIMARY KEY,
@@ -19,9 +19,9 @@ with engine.begin() as conn:
         merchant_country VARCHAR(100)
       );
     """))
-    # 2. Transactions table
+    # 2. descriptors 
     conn.execute(text("""
-      CREATE TABLE IF NOT EXISTS transactions (
+      CREATE TABLE IF NOT EXISTS descriptors (
         descriptor_id    VARCHAR(36) PRIMARY KEY,
         descriptor       TEXT NOT NULL,
         cleaned_descriptor TEXT,
