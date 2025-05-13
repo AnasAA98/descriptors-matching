@@ -28,7 +28,7 @@ def dump_unmatched() -> None:
     """Dump only the unmatched descriptors (merchant_id IS NULL)."""
     sql = text("SELECT * FROM descriptors WHERE merchant_id IS NULL")
     df = pd.read_sql(sql, engine)
-    path = OUT_DIR / "unmatched.csv"
+    path = OUT_DIR / "data/unmatched.csv"
     df.to_csv(path, index=False)
     print(f"✅  unmatched       → {path.name}  ({len(df):,} rows)")
 

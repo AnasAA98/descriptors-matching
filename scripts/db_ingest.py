@@ -56,7 +56,7 @@ def main() -> None:
     merchants.to_sql(
         "merchant_list", engine, if_exists="append", index=False, dtype=MERCHANT_DTYPE
     )
-    print("✅ merchant_list table refreshed")
+    print("merchant_list table refreshed")
 
     # --- 2. Descriptors ---------------------------------------------------- #
     descriptors = load_sheet("Descriptors")
@@ -68,7 +68,7 @@ def main() -> None:
     descriptors.to_sql(
         "descriptors", engine, if_exists="append", index=False, dtype=DESC_DTYPE
     )
-    print("✅ descriptors table refreshed")
+    print("descriptors table refreshed")
 
 
 if __name__ == "__main__":

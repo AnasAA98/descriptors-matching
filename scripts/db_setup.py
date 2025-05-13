@@ -30,4 +30,4 @@ with engine.begin() as conn:
         FOREIGN KEY (merchant_id) REFERENCES merchant_list(merchant_id)
       );
     """))
-print("✅ Schema created (or already existed).")
+print("Schema created (or already existed).")

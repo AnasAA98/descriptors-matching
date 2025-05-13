@@ -11,7 +11,7 @@ def build_engine():
     return create_engine(url, echo=False, future=True)
 
 def main():
-    aliases = pd.read_csv("aliases.csv")
+    aliases = pd.read_csv("data/aliases.csv")
     needed = {c.upper() for c in aliases.canonical}
 
     engine = build_engine()
@@ -31,7 +31,7 @@ def main():
                 {"mid": str(uuid.uuid4()), "mname": name}
             )
 
-    print("✅ merchant_list updated.")
+    print("merchant_list updated.")
     
 if __name__ == "__main__":
     main()

@@ -40,7 +40,7 @@ def load_merchant_lookup(conn):
 
 def load_aliases():
     try:
-        df = pd.read_csv("aliases.csv")
+        df = pd.read_csv("data/aliases.csv")
         return {p.upper(): c.upper() for p, c in zip(df.pattern, df.canonical)}
     except FileNotFoundError:
         return {}
@@ -144,7 +144,7 @@ def main():
             columns=["descriptor_id", "raw_descriptor",
                      "cleaned_descriptor", "best_guess", "score"]
         ).to_csv("unmatched.csv", index=False)
-        print("⚠️  Unmatched descriptors written to unmatched.csv")
+        print("Unmatched descriptors written to unmatched.csv")
 
 
 if __name__ == "__main__":
